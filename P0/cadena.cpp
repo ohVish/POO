@@ -98,8 +98,12 @@ Cadena::~Cadena()
 
 Cadena& Cadena::operator+=(const Cadena &copia)
 {
-    strcat(s_, copia.s_);
-    tam_ += copia.tam_;
+    Cadena aux{*this};
+    delete[] s_;
+    s_ = new char[tam_+copia.tam_+1];
+    tam_+=copia.tam_;
+    strcat(s_,aux.s_);
+    strcat(s_,copia.s_);
     return *this;
 }
 
