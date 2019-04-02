@@ -109,11 +109,11 @@ Fecha Fecha::operator-(int dia) const
     return aux;
 }
 
-Fecha &Fecha::operator++(int)
+Fecha Fecha::operator++(int)
 {
-    Fecha *aux = new Fecha{*this};
+    Fecha aux{*this};
     *this += 1;
-    return *aux;
+    return aux;
 }
 
 Fecha &Fecha::operator++()
@@ -122,11 +122,11 @@ Fecha &Fecha::operator++()
     return *this;
 }
 
-Fecha &Fecha::operator--(int)
+Fecha Fecha::operator--(int)
 {
-    Fecha *aux = new Fecha{*this};
+    Fecha aux{*this};
     *this += (-1);
-    return *aux;
+    return aux;
 }
 
 Fecha &Fecha::operator--()
