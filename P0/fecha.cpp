@@ -138,15 +138,15 @@ Fecha &Fecha::operator--()
 bool operator<(const Fecha &fecha1, const Fecha &fecha2)
 {
     bool valor = false;
-    if (fecha1.y < fecha2.y)
+    if (fecha1.anno() < fecha2.anno())
         valor = true;
-    else if (fecha1.y == fecha2.y)
+    else if (fecha1.anno() == fecha2.anno())
     {
-        if (fecha1.m < fecha2.m)
+        if (fecha1.mes() < fecha2.mes())
             valor = true;
-        else if (fecha1.m == fecha2.m)
+        else if (fecha1.mes() == fecha2.mes())
         {
-            if (fecha1.d < fecha2.d)
+            if (fecha1.dia() < fecha2.dia())
                 valor = true;
         }
     }
