@@ -27,11 +27,11 @@ public:
 
   //Preincremento y postincremento respectivamente.
   Fecha& operator++();
-  Fecha& operator++(int);
+  Fecha operator++(int);
 
   //Predecremento y postdecremento respectivamente.
   Fecha& operator--();
-  Fecha& operator--(int);
+  Fecha operator--(int);
   
   //Operador de conversión implícita a const char*.
   operator const char*()const;
@@ -41,12 +41,6 @@ public:
 
   //Operador resta de una Fecha con un entero.
   Fecha operator -(int dia)const;
-
-  
-  //Operadores lógicos.
-
-  friend bool operator==(const Fecha &fecha1, const Fecha &fecha2);
-  friend bool operator<(const Fecha &fecha1, const Fecha &fecha2);
   
 
   //Constantes estáticas de la clase.
@@ -69,6 +63,8 @@ private:
   void comprobar();
 };
 
+bool operator==(const Fecha &fecha1, const Fecha &fecha2);
+bool operator<(const Fecha &fecha1, const Fecha &fecha2);
 bool operator>(const Fecha &fecha1, const Fecha &fecha2);
 bool operator!=(const Fecha &fecha1, const Fecha &fecha2);
 bool operator<=(const Fecha &fecha1, const Fecha &fecha2);
@@ -77,7 +73,7 @@ bool operator>=(const Fecha &fecha1, const Fecha &fecha2);
 
 inline bool operator==(const Fecha &fecha1, const Fecha &fecha2)
 {
-  return (fecha1.d == fecha2.d && fecha1.m == fecha2.m && fecha1.y == fecha2.y);
+  return (fecha1.dia() == fecha2.dia() && fecha1.mes() == fecha2.mes() && fecha1.anno() == fecha2.anno());
 }
 
 
