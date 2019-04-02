@@ -15,13 +15,13 @@ class Cadena
     
     friend Cadena operator +(const Cadena& cad1, const Cadena& cad2);
     
-    char& operator[](int i);
-    char operator[](int i)const;
+    char& operator[](unsigned i);
+    char operator[](unsigned i)const;
 
-    char at(int i)const;
-    char& at(int i);
+    char at(unsigned i)const;
+    char& at(unsigned i);
 
-    Cadena substr(int i,unsigned tam)const;
+    Cadena substr(unsigned i,unsigned tam)const;
 
     unsigned length()const;
     
