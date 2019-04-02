@@ -40,35 +40,35 @@ Cadena &Cadena::operator=(const Cadena &copia)
     return *this;
 }
 
-char Cadena::operator[](int i) const
+char Cadena::operator[](unsigned i) const
 {
     return *(s_ + i);
 }
 
-char &Cadena::operator[](int i)
+char &Cadena::operator[](unsigned i)
 {
     return *(s_ + i);
 }
 
-char Cadena::at(int i) const
+char Cadena::at(unsigned i) const
 {
-    if (i >= tam_ || i < 0)
+    if (i >= tam_)
         throw std::out_of_range{"Indice fuera del rango."};
     else
         return *(s_ + i);
 }
 
-char &Cadena::at(int i)
+char &Cadena::at(unsigned i)
 {
-    if (i >= tam_ || i < 0)
+    if (i >= tam_)
         throw std::out_of_range{"Indice fuera del rango."};
     else
         return *(s_ + i);
 }
 
-Cadena Cadena::substr(int i, unsigned tam) const
+Cadena Cadena::substr(unsigned i, unsigned tam) const
 {
-    if (i >= tam_ || i < 0)
+    if (i >= tam_)
         throw std::out_of_range{"Indice fuera del rango."};
     else
     {
@@ -121,12 +121,12 @@ Cadena::operator const char *()const
 
 bool operator<(const Cadena &cad1, const Cadena &cad2)
 {
-    return (strcmp(cad1.s_, cad2.s_) < 0);
+    return (strcmp(cad1,cad2) < 0);
 }
 
 bool operator==(const Cadena &cad1, const Cadena &cad2)
 {
-    return (strcmp(cad1.s_, cad2.s_) == 0);
+    return (strcmp(cad1,cad2) == 0);
 }
 
 bool operator!=(const Cadena &cad1, const Cadena &cad2)
