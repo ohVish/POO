@@ -23,11 +23,6 @@ class Cadena
 
     Cadena substr(int i,unsigned tam)const;
 
-
-    friend bool operator==(const Cadena& cad1, const Cadena& cad2);
-    friend bool operator<(const Cadena& cad1, const Cadena& cad2);
-    
-
     unsigned length()const;
     
     ~Cadena();
@@ -37,6 +32,8 @@ class Cadena
     unsigned tam_;
 };
 
+bool operator==(const Cadena& cad1, const Cadena& cad2);
+bool operator<(const Cadena& cad1, const Cadena& cad2);
 bool operator>(const Cadena& cad1, const Cadena& cad2);
 bool operator!=(const Cadena& cad1, const Cadena& cad2);
 bool operator<=(const Cadena& cad1, const Cadena& cad2);
